@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Ahmad - Portfolio | Heavy</title>
+
+<!-- TAILWIND CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { corePlugins: { preflight: false }, darkMode: 'class' }
+</script>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;scroll-behavior:smooth}
+  :root{--main:#ff7a18;--dark:#0f172a;--light:#f8fafc;--card:#ffffff}
+  body{background:var(--light);color:var(--dark);overflow-x:hidden}
+  body.dark{background:#020617;color:#fff}
+  body.dark .card{background:#1e293b;color:#fff}
+  body.dark .about-box, body.dark .skill-box{background:#1e293b;color:#fff}
+
+  /* BACKGROUND ANIMATION */
+  .bg-anim{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,#0f172a,#1e293b,#ff7a18,#0f172a);background-size:300% 300%;animation:bgMove 12s ease infinite;opacity:.12}
+  @keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  #particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+  .navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);color:#fff}
+  .nav-link{color:#cbd5e1;text-decoration:none;font-weight:600}
+  .nav-link:hover{color:var(--main)}
+  .btn{background:var(--main);color:#fff;border:none;cursor:pointer;transition:.3s}
+  .btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 25px rgba(255,122,24,.4)}
+  .btn2{background:#0f172a;color:#fff;border:none;cursor:pointer}
+  .card{background:var(--card);transition:.3s}
+  .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.18)}
+  .hero-img{width:320px;height:320px;object-fit:cover;border-radius:50%;border:6px solid var(--main);box-shadow:0 0 0 10px rgba(255,122,24,.15),0 20px 50px rgba(0,0,0,.3);animation:float 3s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .badge{background:#fff1e6;color:#ff7a18;padding:6px 14px;border-radius:999px;font-weight:700;font-size:13px}
+  .skill-bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+  .skill-fill{height:100%;background:linear-gradient(90deg,#ff7a18,#facc15);border-radius:999px;animation:fill 1.5s ease}
+  @keyframes fill{from{width:0}}
+  .section-title{font-size:36px;font-weight:800}
+  .section-title span{color:var(--main)}
+  input,textarea{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:10px;outline:none;font-size:15px}
+  input:focus,textarea:focus{border-color:var(--main);box-shadow:0 0 0 3px rgba(255,122,24,.2)}
+  .product-img{width:100%;height:220px;object-fit:cover;border-radius:14px}
+  .marquee{background:var(--main);color:#fff;overflow:hidden;white-space:nowrap;padding:10px 0;font-weight:700}
+  .marquee span{display:inline-block;animation:marq 15s linear infinite}
+  @keyframes marq{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+  @media(max-width:768px){.hero-img{width:220px;height:220px}.section-title{font-size:28px}}
+</style>
+</head>
+<body>
+
+<div class="bg-anim"></div>
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <nav class="navbar flex justify-between items-center px-6 py-4 max-w-7xl mx-auto flex-wrap gap-4">
+    <a href="#" class="text-2xl font-extrabold">AHMAD<span style="color:var(--main)">.</span></a>
+    <div class="flex gap-6 flex-wrap">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#product">Product</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+    <div class="flex gap-2">
+      <button onclick="toggleDark()" class="btn2 px-4 py-2 rounded-full text-sm">🌙 Dark / Light</button>
+      <button onclick="togglePause()" id="pauseBtn" class="btn px-4 py-2 rounded-full text-sm">⏸ Pause</button>
+    </div>
+  </nav>
+  <div class="marquee"><span>🔥 HEAVY PORTFOLIO • HTML + CSS + TAILWIND + JS • RESPONSIVE • DARK MODE • ANIMATIONS • &nbsp;&nbsp; 🔥 HEAVY PORTFOLIO • HTML + CSS + TAILWIND + JS •</span></div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6">
+
+  <!-- HERO -->
+  <section id="home" class="hero grid md:grid-cols-2 items-center gap-10 py-16">
+    <div class="grid gap-4">
+      <span class="badge w-fit">👋 Hello, I'm</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">Muhammad <span style="color:var(--main)">Ahmad</span><br>Web Developer</h1>
+      <p class="text-lg opacity-80">I build clean, fast & responsive websites using HTML, CSS, Bootstrap, Tailwind & JavaScript. Apna College Web Dev Course - First 52 Videos Completed.</p>
+      <div class="flex gap-3 flex-wrap">
+        <button class="btn px-6 py-3 rounded-full font-bold" onclick="downloadCV()">⬇ Download Resume</button>
+        <a href="#projects"><button class="btn2 px-6 py-3 rounded-full font-bold">View Projects →</button></a>
+      </div>
+      <div class="flex gap-6 mt-2">
+        <div><b class="text-2xl">10+</b><br><small>Projects</small></div>
+        <div><b class="text-2xl">52</b><br><small>Videos Done</small></div>
+        <div><b class="text-2xl">100%</b><br><small>Responsive</small></div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" class="hero-img" alt="Muhammad Ahmad Profile" />
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-12">
+    <h2 class="section-title text-center">About <span>Me</span></h2>
+    <p class="text-center opacity-70 mt-2 mb-8">Student | Developer | Multan, Pakistan</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card about-box rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-bold mb-2">🎓 Student</h3><p>I am learning Web Development from Apna College. HTML, CSS, Flexbox, Grid, Bootstrap, Tailwind & JS.</p></div>
+      <div class="card about-box rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-bold mb-2">💻 Developer</h3><p>I love to make heavy, animated & responsive websites. Clean code + comments is my style.</p></div>
+      <div class="card about-box rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-bold mb-2">🚀 Goal</h3><p>To become a Full Stack Developer and build products people actually use.</p></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-12">
+    <h2 class="section-title text-center">My <span>Skills</span></h2>
+    <div class="skills-grid grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>HTML</b><b>95%</b></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>CSS - Flexbox / Grid</b><b>90%</b></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>Bootstrap / Tailwind</b><b>85%</b></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>JavaScript</b><b>70%</b></div><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-12">
+    <h2 class="section-title text-center">My <span>Projects</span></h2>
+    <div class="projects-grid grid md:grid-cols-3 gap-6 mt-8">
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" class="product-img" alt="Payment Form Project">
+        <h3 class="text-xl font-bold mt-3">Payment Form</h3><p class="text-sm opacity-70 my-2">Simple + Secure Payment Form using HTML + CSS. With validation & responsive design.</p>
+        <div class="flex gap-2"><button class="btn px-4 py-2 rounded-full text-sm flex-1">Live Demo</button><button class="btn2 px-4 py-2 rounded-full text-sm flex-1">GitHub</button></div>
+      </div>
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" class="product-img" alt="Shoe Store Project">
+        <h3 class="text-xl font-bold mt-3">Shoes By Ahmad's</h3><p class="text-sm opacity-70 my-2">E-commerce landing page for shoes. Product cards, cart UI & heavy animations.</p>
+        <div class="flex gap-2"><button class="btn px-4 py-2 rounded-full text-sm flex-1">Live Demo</button><button class="btn2 px-4 py-2 rounded-full text-sm flex-1">GitHub</button></div>
+      </div>
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" class="product-img" alt="Portfolio Project">
+        <h3 class="text-xl font-bold mt-3">Portfolio Website</h3><p class="text-sm opacity-70 my-2">This portfolio itself. Responsive, Dark Mode, Particles, Tailwind + Pure CSS.</p>
+        <div class="flex gap-2"><button class="btn px-4 py-2 rounded-full text-sm flex-1">Live Demo</button><button class="btn2 px-4 py-2 rounded-full text-sm flex-1">GitHub</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT LANDING - MINI PRODUCT -->
+  <section id="product" class="py-12">
+    <h2 class="section-title text-center">Mini Product - <span>Shoes By Ahmad's</span></h2>
+    <div class="card rounded-2xl p-6 shadow-xl grid md:grid-cols-2 gap-8 items-center mt-8">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" class="product-img !h-[320px]" alt="Ahmad Runner Shoes">
+      <div class="grid gap-3">
+        <span class="badge w-fit">🔥 BEST SELLER</span>
+        <h3 class="text-3xl font-extrabold">Ahmad Runner - Pro</h3>
+        <p class="opacity-80">Lightweight, comfortable & stylish. Made for Multan streets to university life. Free delivery in Pakistan.</p>
+        <div class="flex gap-3 items-center"><b class="text-3xl" style="color:var(--main)">Rs. 4,999</b><s class="opacity-50">Rs. 7,999</s><span class="badge">37% OFF</span></div>
+        <div class="flex gap-2 flex-wrap"><button class="btn px-6 py-3 rounded-full font-bold flex-1" onclick="buyNow()">🛒 Buy Now</button><button class="btn2 px-6 py-3 rounded-full font-bold" onclick="addCart()">Add to Cart</button></div>
+        <small class="opacity-60">✅ Cash on Delivery • ✅ 7 Days Return • ✅ 100% Original</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-12">
+    <h2 class="section-title text-center">Contact <span>Me</span></h2>
+    <form onsubmit="sendMsg(event)" class="card max-w-2xl mx-auto rounded-2xl p-6 shadow-lg grid gap-4 mt-8">
+      <label><b>Name</b></label><input type="text" placeholder="Enter your name" required>
+      <label><b>Email</b></label><input type="email" placeholder="Enter your email" required>
+      <label><b>Message</b></label><textarea rows="4" placeholder="Enter your message" required></textarea>
+      <button class="btn px-6 py-3 rounded-full font-bold w-full">Send Message →</button>
+      <p class="text-center text-sm opacity-70">📍 Multan, Pakistan | 📧 ahmad@gmail.com | 📱 0300-1234567</p>
+      <div class="flex justify-center gap-3"><a href="#" class="btn px-4 py-2 rounded-full text-sm">GitHub</a><a href="#" class="btn px-4 py-2 rounded-full text-sm">LinkedIn</a><a href="#" class="btn px-4 py-2 rounded-full text-sm">Instagram</a></div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="text-center py-6 text-white mt-8" style="background:#0f172a">
+  <p>© 2026 Muhammad Ahmad - Apna College Web Dev Assignment | HTML + CSS + Tailwind + JS</p>
+  <p class="text-sm opacity-60 mt-1"><a href="#home" style="color:#fff">Home</a> • <a href="#about" style="color:#fff">About</a> • <a href="#projects" style="color:#fff">Projects</a> • <a href="#contact" style="color:#fff">Contact</a></p>
+</footer>
+
+<script>
+  // DARK MODE
+  function toggleDark(){ document.body.classList.toggle('dark'); }
+  // PAUSE / PLAY ANIMATION
+  let paused=false;
+  function togglePause(){
+    paused=!paused;
+    document.querySelector('.bg-anim').style.animationPlayState = paused ? 'paused' : 'running';
+    document.getElementById('pauseBtn').innerText = paused ? '▶ Play' : '⏸ Pause';
+  }
+  // RESUME DOWNLOAD
+  function downloadCV(){ alert('Resume Download Ho Raha Hai... (Demo)'); }
+  function buyNow(){ alert('Order Placed! Shukriya - Shoes By Ahmad\'s'); }
+  function addCart(){ alert('Added to Cart!'); }
+  function sendMsg(e){ e.preventDefault(); alert('Message Sent! Main jald reply karu ga.'); e.target.reset(); }
+
+  // PARTICLES JS - HEAVY EFFECT
+  const canvas=document.getElementById('particles'); const ctx=canvas.getContext('2d');
+  let W,H,parts=[];
+  function resize(){ W=canvas.width=innerWidth; H=canvas.height=innerHeight; }
+  window.addEventListener('resize',resize); resize();
+  for(let i=0;i<70;i++){ parts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*3+1,sx:(Math.random()-.5)*.6,sy:(Math.random()-.5)*.6}); }
+  function draw(){
+    if(!paused){
+      ctx.clearRect(0,0,W,H); ctx.fillStyle='#ff7a18';
+      parts.forEach(p=>{ p.x+=p.sx; p.y+=p.sy; if(p.x<0||p.x>W)p.sx*=-1; if(p.y<0||p.y>H)p.sy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); });
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+</script>
+</body>
+</html>

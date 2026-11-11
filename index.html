@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdullah - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { corePlugins: { preflight: false }, darkMode: 'class' }
+</script>
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<div class="bg-anim"></div>
+<canvas id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAVBAR  -->
+<header class="navbar">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center flex-wrap gap-3">
+    <a  class="text-xl sm:text-2xl font-extrabold">ABDULLAH<span style="color:var(--main)"></span></a>
+    <button onclick="toggleMenu()" class="md:hidden text-3xl leading-none px-2">☰</button>
+    
+
+    <div id="navLinks" class="hidden w-full md:w-auto md:flex md:items-center gap-3 md:gap-6 flex-col md:flex-row text-center mt-3 md:mt-0">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#product">Product</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <div class="flex gap-2 justify-center mt-2 md:mt-0 md:ml-3">
+        <button onclick="toggleDark()" class="btn2 px-3 py-2 rounded-full text-sm">🌙 Dark</button>
+        <button onclick="togglePause()" id="pauseBtn" class="btn px-3 py-2 rounded-full text-sm">⏸ Pause</button>
+      </div>
+    </div>
+  </nav>
+  <div class="marquee"><span>🔥 ABDULLAH PORTFOLIO • BOOSTED • HTML + CSS + TAILWIND + JS • DARK MODE • PARTICLES • ANIMATIONS • 🔥 ABDULLAH PORTFOLIO • BOOSTED •</span></div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+
+  <!-- HERO -  -->
+  <section id="home" class="hero grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-10 py-10 md:py-16">
+    <div class="grid gap-4 text-center md:text-left justify-items-center md:justify-items-start">
+      <span class="badge w-fit">👋 Hello, I'm Abdullah</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">Abdullah<br><span class="typing" id="typing"></span></h1>
+      <p class="text-base sm:text-lg opacity-80">I build clean, fast & heavy responsive websites using HTML, CSS, Bootstrap, Tailwind & JavaScript. Your trust our success</p>
+      <div class="flex gap-3 flex-wrap justify-center md:justify-start w-full">
+        <button class="btn px-5 sm:px-6 py-3 rounded-full font-bold flex-1 sm:flex-none" onclick="downloadCV()">⬇ Download Resume</button>
+        <a href="#projects" class="flex-1 sm:flex-none"><button class="btn2 px-5 sm:px-6 py-3 rounded-full font-bold w-full">View Projects →</button></a>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full">
+        <div class="stat-card text-center"><b class="text-xl sm:text-2xl counter" data-target="10">0</b>+<br><small>Projects</small></div>
+        <div class="stat-card text-center"><b class="text-xl sm:text-2xl counter" data-target="2">0</b><br><small>months Experience</small></div>
+        <div class="stat-card text-center"><b class="text-xl sm:text-2xl counter" data-target="100">0</b>%<br><small>Responsive</small></div>
+        <div class="stat-card text-center"><b class="text-xl sm:text-2xl">⭐ 4.9</b><br><small>Rating</small></div>
+      </div>
+    </div>
+    <div class="flex justify-center relative w-full mt-4 md:mt-0">
+      <div class="hero-ring"></div>
+      <img src="heroabdullah.jpeg" class="hero-img w-[250px] h-[250px] sm:w-[320px] sm:h-[320px] object-cover rounded-full" alt="Abdullah Profile" />
+      <div class="float-card">💻 Web Developer</div>
+      <div class="float-card float2">🚀 Available For Work</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-10 md:py-12">
+    <h2 class="section-title text-center text-3xl sm:text-4xl">About <span>Me</span></h2>
+    <p class="text-center opacity-70 mt-2 mb-8">Student | Developer | Multan, Pakistan</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+      <div class="card about-box rounded-2xl p-6 shadow-lg tilt"><h3 class="text-xl font-bold mb-2">🎓 Student</h3><p>I am learning Web Development from Apna College. HTML, CSS, Flexbox, Grid, Bootstrap, Tailwind & JS - All concepts clear.</p></div>
+      <div class="card about-box rounded-2xl p-6 shadow-lg tilt"><h3 class="text-xl font-bold mb-2">💻 Developer</h3><p>I love to make heavy, animated & responsive websites. Clean code + comments is my style. Every project is portfolio-ready.</p></div>
+      <div class="card about-box rounded-2xl p-6 shadow-lg tilt sm:col-span-2 md:col-span-1"><h3 class="text-xl font-bold mb-2">🚀 Goal</h3><p>To become a Full Stack Developer and build products people actually use. Next target - React & Node.js.</p></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-10 md:py-12">
+    <h2 class="section-title text-center text-3xl sm:text-4xl">My <span>Skills</span></h2>
+    <div class="skills-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-8">
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>HTML</b><b>95%</b></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>CSS - Flexbox / Grid</b><b>90%</b></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>Bootstrap / Tailwind</b><b>88%</b></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="card skill-box rounded-2xl p-6 shadow"><div class="flex justify-between mb-2"><b>JavaScript</b><b>75%</b></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    </div>
+    <div class="flex gap-2 sm:gap-3 flex-wrap justify-center mt-6">
+      <span class="badge">HTML5</span><span class="badge">CSS3</span><span class="badge">Flexbox</span><span class="badge">Grid</span><span class="badge">Bootstrap 5</span><span class="badge">Tailwind CSS</span><span class="badge">JavaScript</span><span class="badge">GitHub</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-10 md:py-12">
+    <h2 class="section-title text-center text-3xl sm:text-4xl">My <span>Projects</span></h2>
+    <div class="flex gap-2 sm:gap-3 justify-center mt-4 flex-wrap">
+      <button class="btn px-4 sm:px-5 py-2 rounded-full text-sm" onclick="filterProjects('all')">All</button>
+      <button class="btn2 px-4 sm:px-5 py-2 rounded-full text-sm" onclick="filterProjects('web')">Web</button>
+      <button class="btn2 px-4 sm:px-5 py-2 rounded-full text-sm" onclick="filterProjects('shop')">Shop</button>
+    </div>
+    <div class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mt-8" id="projectsGrid">
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition" data-cat="web">
+        <img src="perfume.png" class="product-img w-full h-auto rounded-xl" alt="Perfume Store">
+        <h3 class="text-xl font-bold mt-3">Perfume Store</h3><p class="text-sm opacity-70 my-2">Simple + Secure Payment Form using HTML + CSS. With validation & responsive design.</p>
+        <div class="flex gap-2 flex-col sm:flex-row"><a href="http://127.0.0.1:5500/image/perfumestore.html" target="_blank" class="btn px-4 py-2 rounded-full text-sm flex-1 text-center">🔴 Live Demo</a><a href="#" target="_blank" class="btn2 px-4 py-2 rounded-full text-sm flex-1 text-center">GitHub</a></div>
+      </div>
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition" data-cat="shop">
+        <img src="clothes store.png" class="product-img w-full h-auto rounded-xl" alt="Clothes Store">
+        <h3 class="text-xl font-bold mt-3">Clothes By Abdullah's</h3><p class="text-sm opacity-70 my-2">E-commerce landing page for clothes. Product cards, cart UI & heavy animations.</p>
+        <div class="flex gap-2 flex-col sm:flex-row"><a href="http://127.0.0.1:5500/clothes.areana.html" target="_blank" class="btn px-4 py-2 rounded-full text-sm flex-1 text-center">🔴 Live Demo</a><a href="#" target="_blank" class="btn2 px-4 py-2 rounded-full text-sm flex-1 text-center">GitHub</a></div>
+      </div>
+      <div class="card project-card rounded-2xl p-4 shadow-lg hover:scale-105 transition sm:col-span-2 lg:col-span-1" data-cat="web">
+        <img src="Screenshot 2026-11-07 174350.png" class="product-img w-full h-auto rounded-xl" alt="shosestore">
+        <h3 class="text-xl font-bold mt-3">LUMINA PREMIUM</h3><p class="text-sm opacity-70 my-2">This portfolio itself. Responsive, Dark Mode, Particles, Tailwind + Pure CSS.</p>
+        <div class="flex gap-2 flex-col sm:flex-row"><a href="http://127.0.0.1:5500/web.html" target="_blank" class="btn px-4 py-2 rounded-full text-sm flex-1 text-center">🔴 Live Demo</a><a href="#" target="_blank" class="btn2 px-4 py-2 rounded-full text-sm flex-1 text-center">GitHub</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section id="product" class="py-10 md:py-12">
+    <h2 class="section-title text-center text-3xl sm:text-4xl">Mini Product - <span>Shoes By Abdullah's</span></h2>
+    <div class="card rounded-2xl p-4 sm:p-6 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mt-8 product-boost">
+      <div class="relative w-full">
+        <img src="shosestore.png" class="product-img w-full h-auto max-h-[320px] object-cover rounded-xl" alt="Abdullah Runner Shoes">
+        <span class="discount-badge">-37%</span>
+      </div>
+      <div class="grid gap-3 text-center md:text-left justify-items-center md:justify-items-start">
+        <span class="badge w-fit">🔥 BEST SELLER - 500+ Sold</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold">Abdullah Runner - Pro</h3>
+        <p class="opacity-80 text-sm sm:text-base">Lightweight, comfortable & stylish. Made for Multan streets to university life. Free delivery in Pakistan.</p>
+        <div class="flex gap-3 items-center flex-wrap justify-center md:justify-start"><b class="text-2xl sm:text-3xl" style="color:var(--main)">Rs. 4,999</b><s class="opacity-50">Rs. 7,999</s><span class="badge">37% OFF</span></div>
+        <div class="flex gap-2 items-center flex-wrap justify-center md:justify-start">Size: <button class="size-btn" onclick="selectSize(this)">7</button><button class="size-btn" onclick="selectSize(this)">8</button><button class="size-btn active" onclick="selectSize(this)">9</button><button class="size-btn" onclick="selectSize(this)">10</button></div>
+        <div class="flex gap-2 flex-wrap w-full flex-col sm:flex-row"><button class="btn px-6 py-3 rounded-full font-bold flex-1" onclick="buyNow()">🛒 Buy Now</button><button class="btn2 px-6 py-3 rounded-full font-bold flex-1 sm:flex-none" onclick="addCart()">Add to Cart (<span id="cartCount">0</span>)</button></div>
+        <small class="opacity-60">✅ Cash on Delivery • ✅ 7 Days Return • ✅ 100% Original</small>
+        <div class="flex gap-1 text-xl sm:text-2xl justify-center md:justify-start">⭐⭐⭐⭐⭐ <span class="text-sm opacity-70 mt-1">(4.9 - 212 Reviews)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-10 md:py-12">
+    <h2 class="section-title text-center text-3xl sm:text-4xl">Contact <span>Me</span></h2>
+    <form onsubmit="sendMsg(event)" class="card max-w-2xl mx-auto rounded-2xl p-4 sm:p-6 shadow-lg grid gap-4 mt-8">
+      <label><b>Name</b></label><input type="text" placeholder="Enter your name" required class="w-full">
+      <label><b>Email</b></label><input type="email" placeholder="Enter your email" required class="w-full">
+      <label><b>Message</b></label><textarea rows="4" placeholder="Enter your message" required class="w-full"></textarea>
+      <button class="btn px-6 py-3 rounded-full font-bold w-full">Send Message →</button>
+      <p class="text-center text-sm opacity-70">📍 Multan, Pakistan | 📧 abdullah@gmail.com | 📱 0300-1234567</p>
+      <div class="flex justify-center gap-2 sm:gap-3 flex-wrap"><a href="#" class="btn px-4 py-2 rounded-full text-sm">GitHub</a><a href="#" class="btn px-4 py-2 rounded-full text-sm">LinkedIn</a><a href="#" class="btn px-4 py-2 rounded-full text-sm">Instagram</a></div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="text-center py-6 px-4 text-white mt-8" style="background:#0f172a">
+  <p>© 2026 Abdullah - Apna College Web Dev Assignment | HTML + CSS + Tailwind + JS</p>
+  <p class="text-sm opacity-60 mt-1"><a href="#home" style="color:#fff">Home</a> • <a href="#about" style="color:#fff">About</a> • <a href="#projects" style="color:#fff">Projects</a> • <a href="#contact" style="color:#fff">Contact</a></p>
+  <button onclick="scrollToTop()" class="btn px-5 py-2 rounded-full text-sm mt-3">⬆ Back to Top</button>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

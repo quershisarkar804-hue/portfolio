@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Study Website</title>
+
+    <!-- BOOTSTRAP 5 CDN ADDED -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: lightsteelblue;
+        
+      }
+      /* Tumhara Custom Style */
+      .hero {
+        background: linear-gradient(120deg, orange 2%, yellow 20%, white 100%);
+        border: 2px solid black;
+        border-radius: 30px;
+      }
+      .video-box iframe {
+        border: 2px solid gray;
+        border-radius: 20px;
+      }
+      .about-image {
+        width: 280px;
+        height: 320px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      @media (max-width: 768px) {
+        .about-image { width: 100%; max-width: 280px; height: 250px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR WITH BOOTSTRAP CLASSES -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3 m-2 shadow">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">StudyHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" href="sample.html">Home</a>
+            <a class="nav-link" href="UC8pri6HK3oo1JoJZHnz9ImQ">Study Material</a>
+            <a class="nav-link" href="UCBwmMxybNva6P_5VmxjzwqA">Concept</a>
+            <a class="btn btn-warning ms-lg-3 fw-bold" href="#">Login / Signup</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO WITH BOOTSTRAP CLASSES -->
+    <div class="container">
+      <div class="hero text-center p-5 my-4 shadow">
+        <h1 class="display-5 fw-bold">Welcome to Study Hub</h1>
+        <p class="lead">Yahan apko Free Notes aur Concepts milenge</p>
+        <button class="btn btn-warning btn-lg fw-bold shadow mt-2">Start Learning</button>
+      </div>
+    </div>
+
+    <!-- VIDEOS SECTION WITH BOOTSTRAP GRID -->
+    <div class="container bg-light p-4 rounded-4 shadow-lg my-4 text-center">
+      <h2 class="text-primary fw-bold mb-4">Videos</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="ratio ratio-1x1">
+            <iframe src="https://www.youtube.com/embed/_CiGsujDHZo" class="rounded-4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="ratio ratio-1x1">
+            <iframe src="https://www.youtube.com/embed/GmQV1y0p2SQ" class="rounded-4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="ratio ratio-1x1">
+            <iframe src="https://www.youtube.com/embed/G0Iy-hpXoU8" class="rounded-4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="ratio ratio-1x1">
+            <iframe src="https://www.youtube.com/embed/3PWKiLFT4X4" class="rounded-4" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES SECTION WITH BOOTSTRAP CARDS -->
+    <div class="container bg-light p-4 rounded-4 shadow-sm my-4 text-center">
+      <h2 class="text-primary fw-bold mb-4">Notes</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm rounded-4 h-100">
+            <img src="pdffile1.webp" class="card-img-top rounded-4" style="height:200px; object-fit:cover;">
+            <div class="card-body"><p class="card-text fw-bold">PDF Notes 1</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm rounded-4 h-100">
+            <img src="pdffile2.jpg" class="card-img-top rounded-4" style="height:200px; object-fit:cover;">
+            <div class="card-body"><p class="fw-bold">PDF Notes 2</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm rounded-4 h-100">
+            <img src="pdffile2.jpg" class="rounded-4" style="height:200px; object-fit:cover;">
+            <div><p class="fw-bold">PDF Notes 3</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm rounded-4 h-100">
+            <img src="pdffile1.webp" class="rounded-4" style="height:200px; object-fit:cover;">
+            <div class="card-body"><p class="card-text fw-bold">PDF Notes 4</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT US WITH BOOTSTRAP FLEX -->
+    <h2 class="text-center fw-bold mt-5">About Us</h2>
+    <section class="d-flex justify-content-center align-items-center p-3 p-md-5">
+        <div class="container bg-white p-4 rounded-4 shadow d-flex flex-column flex-md-row align-items-center gap-4" style="max-width:1000px;">
+            <div class="about-image">Abdullah</div>
+            <div class="text-center text-md-start">
+                <h2 class="fw-bold">About <span class="text-warning">me</span></h2>
+                <p class="text-muted">Hello! My name is Abdullah. Welcome to my website! I am passionate about learning new skills, exploring technology, and creating modern websites.</p>
+                <p class="text-muted">My goal is to improve my skills, turn creative ideas into reality, and build useful digital experiences.</p>
+                <button class="btn btn-warning bg-gradient px-4 py-2 fw-bold" onclick="alert('Thank you for visiting my website!')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+      <p class="m-0">© 2026 Study Hub - For Beginners | Made with Bootstrap 5</p>
+    </footer>
+  </body>
+</html>
