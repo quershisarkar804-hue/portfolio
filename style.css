@@ -17,7 +17,7 @@ img{max-width:100%;height:auto}
 body.dark{background:#020617;color:#fff}
 body.dark .card{background:#1e293b;color:#fff}
 body.dark .about-box,body.dark .skill-box{background:#1e293b;color:#fff}
-body.dark input,body.dark textarea{background:#0f172a;color:#fff;border-color:#334155}
+body.dark input,body.dark textarea{background:white;color:#fff;border-color:#334155}
 
 /* ============ 3. BOOSTED BACKGROUND ============ */
 .bg-anim{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,#0f172a,#1e293b,#ff7a18,#7c3aed,#0f172a);background-size:300% 300%;animation:bgMove 12s ease infinite;opacity:.12}
