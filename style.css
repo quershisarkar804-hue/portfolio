@@ -1,5 +1,12 @@
-
-
+/* MENU BUTTON COLOR */
+.menu-btn{background:var(--main);color:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(255,122,24,.4);transition:.3s!important}
+.menu-btn:hover{transform:scale(1.08);box-shadow:0 6px 16px rgba(255,122,24,.55)}
+.menu-btn:active{transform:scale(.95)}
+/* SIMPLE BLACK NAVBAR */
+.navbar{background:#000}
+.nav-link-new{color:#fff;padding:8px 14px}
+.nav-link-new:hover{color:#ff7a18}
+.menu-btn{background:#ff7a18;color:#fff;border-radius:10px;}
 /* ============ 1. RESET & VARIABLES ============ */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;scroll-behavior:smooth}
 :root{--main:#ff7a18;--dark:#0f172a;--light:#f8fafc;--card:#ffffff}

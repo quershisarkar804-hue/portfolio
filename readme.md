@@ -3,7 +3,7 @@
 A modern, fully responsive personal portfolio website with an integrated
 mini shoe shop. Built with HTML, CSS, Tailwind CSS and JavaScript.
 
-**Author:** Abdullah
+**Author:** Abdullah 
 **Location:** Multan, Pakistan
 **Live Demo:** Open `index.html` in browser
 
