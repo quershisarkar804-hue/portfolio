@@ -173,3 +173,17 @@ document.addEventListener('mousemove', e => {
     g.style.top = e.clientY + 'px';
   }
 });
+// BACK TO TOP LOGIC
+const topBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    topBtn.style.display = "block"; // 300px scroll ke baad dikhega
+  } else {
+    topBtn.style.display = "none"; // Uper hoga to chup jayega
+  }
+});
+
+topBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
