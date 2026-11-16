@@ -25,7 +25,7 @@ function toggleMenu() {
   menu.classList.toggle("flex");
 }
 
-// Link dabate hi Mobile menu auto band ho jaye
+//  Mobile menu auto //
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     const menu = document.getElementById("navLinks");
@@ -173,14 +173,14 @@ document.addEventListener('mousemove', e => {
     g.style.top = e.clientY + 'px';
   }
 });
-// BACK TO TOP LOGIC
+// BACK TO TOP 
 const topBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
-    topBtn.style.display = "block"; // 300px scroll ke baad dikhega
+    topBtn.style.display = "block"; 
   } else {
-    topBtn.style.display = "none"; // Uper hoga to chup jayega
+    topBtn.style.display = "none"; 
   }
 });
 

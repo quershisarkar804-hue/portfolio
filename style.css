@@ -10,10 +10,10 @@ body{background:var(--light);color:var(--dark);overflow-x:hidden}
 img{max-width:100%;height:auto}
 
 /* ============ 2. DARK MODE ============ */
-body.dark{background:#020617;color:#fff}
-body.dark .card{background:#1e293b;color:#fff}
+body.dark{background:#020617;color:red}
+body.dark .card{background:#1e293b;color:red}
 body.dark .about-box,body.dark .skill-box{background:#1e293b;color:#fff}
-body.dark input,body.dark textarea{background:white;color:#fff;border-color:#334155}
+body.dark input,body.dark textarea{background:white;color:red;border-color:#334155}
 
 /* ============ 3. BOOSTED BACKGROUND ============ */
 .bg-anim{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,#0f172a,#1e293b,#ff7a18,#7c3aed,#0f172a);background-size:300% 300%;animation:bgMove 12s ease infinite;opacity:.12}
@@ -46,7 +46,7 @@ body.dark input,body.dark textarea{background:white;color:#fff;border-color:#334
 .stat-card{background:var(--card);padding:14px 18px;border-radius:14px;box-shadow:0 5px 15px rgba(0,0,0,.08);text-align:center;min-width:110px}
 
 /* ============ 7. SKILLS & SECTIONS ============ */
-.skill-bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+.skill-bar{height:10px;background:bisque;border-radius:999px;overflow:hidden}
 .skill-fill{height:100%;background:linear-gradient(90deg,#ff7a18,#facc15,#22c55e);border-radius:999px;animation:fill 1.5s ease}
 @keyframes fill{from{width:0}}
 .section-title{font-size:36px;font-weight:800}
