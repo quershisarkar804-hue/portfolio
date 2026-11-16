@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shoes by Abdullah's - Step Into Luxury</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
+body{background:#0a0a0a; color:white;}
+.nav{background:#000; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; position:sticky; top:0; z-index:100;}
+.logo{font-size:28px; font-weight:900; letter-spacing:2px;}
+.logo span{color:#ff7a18;}
+.menu{display:flex; gap:30px; font-weight:bold; font-size:14px; letter-spacing:1px;}
+.cart{background:#ff7a18; padding:10px 20px; border-radius:30px; color:black; font-weight:bold; cursor:pointer;}
+.hero{display:flex; padding:80px 50px; align-items:center; background: radial-gradient(circle at 70%, #2a1a0a, #000);}
+.hero-left{width:55%;}
+.hero-left h1{font-size:65px; line-height:0.9; text-transform:uppercase; font-weight:900;}
+.hero-left h1 span{color:#ff7a18;}
+.hero-left p{color:#aaa; margin:20px 0; font-size:16px; max-width:450px;}
+.btn-orange{background:#ff7a18; color:black; padding:15px 30px; border:none; font-weight:900; border-radius:5px; cursor:pointer;}
+.btn-outline{background:transparent; color:white; padding:14px 28px; border:1px solid #ff7a18; border-radius:5px; margin-left:15px; cursor:pointer;}
+.hero-right{width:45%; text-align:center; font-size:180px;}
+.bestsellers{padding:60px 50px; background:#0a0a0a;}
+.grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:30px;}
+.card{background:#151515; border:1px solid #222; border-radius:15px; padding:20px; text-align:center; transition:0.3s;}
+.card:hover{border-color:#ff7a18; transform:translateY(-5px);}
+.card img{width:100%; height:140px; object-fit:contain; background:#0a0a0a;}
+.price{color:#ff7a18; font-weight:bold; margin-top:10px; font-size:18px;}
+.footer{text-align:center; padding:30px; background:black; color:#666; border-top:1px solid #222; margin-top:40px;}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="logo">SHOES <span>by ABDULLAH'S</span></div>
+  <div class="menu"><span>HOME</span><span>MEN</span><span>WOMEN</span><span>SALE</span></div>
+  <div class="cart" onclick="alert('Cart - Shoes by Abdullah')">🛒 Cart (<span id="c">0</span>)</div>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <h1>STEP INTO <span>LUXURY</span></h1>
+    <p>Handcrafted premium sneakers — designed for performance, styled for prestige. By Abdullah's.</p>
+    <button class="btn-orange">SHOP NOW</button>
+    <button class="btn-outline">EXPLORE COLLECTION</button>
+    <p style="margin-top:20px; font-size:12px;">✓ Free Shipping on Rs. 5000+ ✓ 1-Year Warranty</p>
+  </div>
+  <div class="hero-right">👟</div>
+</div>
+
+<div class="bestsellers">
+  <h2 style="text-align:center; font-size:32px;">BESTSELLERS</h2>
+  <p style="text-align:center; color:#888;">Our most loved shoes by Abdullah's customers</p>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="footer">© 2026 Shoes by Abdullah's - All Rights Reserved</div>
+
+<script>
+const shoes = [
+ {name:"Orbit Luxe", price:5999}, {name:"Phantom Pro", price:6499},
+ {name:"Metro Elite", price:5799}, {name:"Guardian Suede", price:6999},
+ {name:"Runner X", price:4999}, {name:"Street King", price:7499},
+ {name:"Air Comfort", price:6299}, {name:"Urban Walk", price:5499}
+];
+let count=0;
+const grid=document.getElementById('grid');
+shoes.forEach(s=>{
+ grid.innerHTML+=`<div class="card"><div style="font-size:80px">👟</div><h3>${s.name}</h3><div class="price">Rs. ${s.price}</div><button onclick="add()" style="width:100%; margin-top:15px; background:#222; color:white; border:none; padding:10px; border-radius:5px; cursor:pointer;">Add to Cart</button></div>`;
+});
+function add(){count++; document.getElementById('c').innerText=count;}
+</script>
+</body>

@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUXE MEN | Luxury Fashion</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f1eb;
+    color:#171715;
+    font-family:'DM Sans',sans-serif;
+}
+
+h1,h2,h3,.logo{
+    font-family:'Playfair Display',serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:85px;
+    padding:0 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:20;
+}
+
+.logo{
+    font-size:25px;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#171715;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#171715;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#aa8958;
+}
+
+.nav-right{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.nav-right input{
+    width:110px;
+    padding:8px;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid #aaa;
+    outline:none;
+}
+
+.nav-right button,.menu-btn{
+    background:transparent;
+    border:0;
+    cursor:pointer;
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* HERO */
+
+.hero{
+    height:680px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+    color:white;
+
+    background:
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+    background-position:center 35%;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.35),
+        transparent
+    );
+}
+
+.hero-content{
+    position:relative;
+    animation:appear 1.5s ease;
+}
+
+.eyebrow{
+    color:#b89b69;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(55px,7vw,90px);
+    line-height:1.1;
+    font-weight:400;
+}
+
+.hero h1 i{
+    color:#c5a879;
+}
+
+.hero-content>p:not(.eyebrow){
+    margin-top:25px;
+    line-height:2;
+    font-size:13px;
+    color:#ddd;
+}
+
+.hero-btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    border:1px solid white;
+    padding:16px 27px;
+    margin-top:30px;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.4s;
+}
+
+.hero-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    padding:110px 20px;
+}
+
+.intro h2{
+    font-size:clamp(38px,5vw,60px);
+    font-weight:400;
+}
+
+.intro h2 i{
+    color:#aa8958;
+}
+
+.intro>p:last-child{
+    max-width:550px;
+    margin:25px auto;
+    color:#777;
+    line-height:2;
+    font-size:13px;
+}
+
+/* COLLECTION */
+
+.collection{
+    background:#eae6de;
+    padding:90px 8%;
+}
+
+.collection-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.collection-heading h2{
+    font-size:48px;
+    font-weight:400;
+}
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:35px 0;
+}
+
+.categories button{
+    border:1px solid #aaa;
+    background:transparent;
+    padding:11px 19px;
+    font-size:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.categories button:hover,
+.categories button.active{
+    background:#171715;
+    color:white;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px 22px;
+}
+
+.product-card{
+    animation:appear .6s ease;
+}
+
+.product-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.product-card img{
+    width:100%;
+    height:410px;
+    object-fit:cover;
+    display:block;
+    transition:.6s;
+}
+
+.product-card:hover img{
+    transform:scale(1.07);
+}
+
+.product-info{
+    padding:17px 0;
+}
+
+.product-info h3{
+    font-size:19px;
+    font-weight:400;
+}
+
+.product-info p{
+    color:#777;
+    font-size:11px;
+    margin:9px 0;
+}
+
+.product-info button{
+    margin-top:10px;
+    padding:12px 20px;
+    background:#171715;
+    color:white;
+    border:0;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product-info button:hover{
+    background:#aa8958;
+}
+
+/* BANNER */
+
+.banner{
+    min-height:520px;
+    background:
+    linear-gradient(90deg,#171715df,#17171550),
+    url("https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:8%;
+    color:white;
+}
+
+.banner h2{
+    font-size:65px;
+    font-weight:400;
+    line-height:1.1;
+}
+
+.banner h2 i{
+    color:#c5a879;
+}
+
+.banner a{
+    display:inline-block;
+    color:white;
+    border-bottom:1px solid white;
+    padding-bottom:10px;
+    margin-top:30px;
+    text-decoration:none;
+    font-size:11px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+    background:#25241f;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.newsletter h2{
+    font-size:50px;
+    font-weight:400;
+}
+
+.newsletter h2 i{
+    color:#c5a879;
+}
+
+.newsletter form{
+    display:flex;
+    max-width:450px;
+    margin:35px auto;
+    border-bottom:1px solid #777;
+}
+
+.newsletter input{
+    flex:1;
+    min-width:0;
+    padding:15px;
+    background:transparent;
+    border:0;
+    color:white;
+    outline:none;
+}
+
+.newsletter button{
+    background:transparent;
+    color:#c5a879;
+    border:0;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    padding:60px 20px 30px;
+    text-align:center;
+}
+
+footer h2{
+    font-size:27px;
+    letter-spacing:4px;
+}
+
+footer p{
+    color:#777;
+    margin:15px;
+}
+
+footer div{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin:30px 0;
+}
+
+footer a{
+    text-decoration:none;
+    font-size:10px;
+    color:#333;
+}
+
+/* CART */
+
+.cart-panel{
+    position:fixed;
+    top:0;
+    right:-450px;
+    width:400px;
+    max-width:100%;
+    height:100vh;
+    background:#f4f1eb;
+    z-index:100;
+    padding:25px;
+    transition:.4s;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-panel.active{
+    right:0;
+}
+
+.cart-heading{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.cart-heading button{
+    background:none;
+    border:0;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.cart-product{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    padding-bottom:15px;
+    border-bottom:1px solid #ccc;
+}
+
+.cart-product img{
+    width:80px;
+    height:90px;
+    object-fit:cover;
+}
+
+.cart-bottom{
+    margin-top:auto;
+    padding-top:20px;
+}
+
+.cart-bottom button{
+    width:100%;
+    padding:16px;
+    background:black;
+    color:white;
+    border:0;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+/* ANIMATION */
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:75px;
+        padding:0 5%;
+    }
+
+    .menu-btn{
+        display:block;
+        font-size:22px;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:#f4f1eb;
+        padding:25px;
+        flex-direction:column;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .nav-right input{
+        display:none;
+    }
+
+    .hero{
+        height:570px;
+        padding:0 7%;
+        background-position:60% center;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .collection{
+        padding:65px 5%;
+    }
+
+    .collection-heading h2{
+        font-size:36px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px 12px;
+    }
+
+    .product-card img{
+        height:260px;
+    }
+
+    .product-info h3{
+        font-size:15px;
+    }
+
+    .banner h2{
+        font-size:48px;
+    }
+
+    .newsletter h2{
+        font-size:38px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="bg-black text-white text-center p-3 text-xs tracking-widest">
+    FREE DELIVERY ON ORDERS ABOVE RS. 25,000
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+    <a href="#" class="logo">LUXE MEN</a>
+
+    <div class="nav-right">
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search..."
+            oninput="searchProducts()">
+
+        <button onclick="toggleCart()">
+            BAG (<span id="cartCount">0</span>)
+        </button>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="eyebrow">THE NEW MEN'S COLLECTION</p>
+
+        <h1>
+            Designed for<br>
+            <i>Distinction.</i>
+        </h1>
+
+        <p>
+            Discover the art of modern menswear.
+            <br>
+            Premium clothing. Timeless identity.
+        </p>
+
+        <a href="#collection" class="hero-btn">
+            EXPLORE MEN'S COLLECTION →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="intro">
+
+    <p class="eyebrow">THE ART OF MEN'S STYLE</p>
+
+    <h2>Confidence in <i>Every Detail.</i></h2>
+
+    <p>
+        A refined collection of modern essentials,
+        designed for men who appreciate quality,
+        confidence and timeless elegance.
+    </p>
+
+</section>
+
+<!-- COLLECTION -->
+
+<section id="collection" class="collection">
+
+    <div class="collection-heading">
+
+        <div>
+            <p class="eyebrow">CURATED MENSWEAR</p>
+            <h2>Shop the Collection.</h2>
+        </div>
+
+        <select id="sortSelect" onchange="sortProducts()">
+            <option value="default">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
+
+    </div>
+
+    <div class="categories">
+
+        <button class="active" onclick="filterProducts('All')">ALL</button>
+        <button onclick="filterProducts('Suits')">SUITS</button>
+        <button onclick="filterProducts('Shirts')">SHIRTS</button>
+        <button onclick="filterProducts('T-Shirts')">T-SHIRTS</button>
+        <button onclick="filterProducts('Jackets')">JACKETS</button>
+        <button onclick="filterProducts('Trousers')">TROUSERS</button>
+        <button onclick="filterProducts('Accessories')">ACCESSORIES</button>
+
+    </div>
+
+    <div id="productContainer" class="product-grid"></div>
+
+</section>
+
+<!-- BANNER -->
+
+<section class="banner">
+
+    <div>
+        <p class="eyebrow">THE SIGNATURE COLLECTION</p>
+
+        <h2>
+            Own Your<br>
+            <i>Presence.</i>
+        </h2>
+
+        <a href="#collection">DISCOVER MORE →</a>
+    </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section id="contact" class="newsletter">
+
+    <p class="eyebrow">EXCLUSIVE ACCESS</p>
+
+    <h2>Join the <i>Inner Circle.</i></h2>
+
+    <p class="text-gray-400 mt-5">
+        Be the first to discover new arrivals and exclusive collections.
+    </p>
+
+    <form onsubmit="subscribe(event)">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            required>
+
+        <button>SUBSCRIBE →</button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>LUXE MEN</h2>
+
+    <p>Modern Menswear. Timeless Elegance.</p>
+
+    <div>
+        <a href="#home">HOME</a>
+        <a href="#collection">SHOP</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+    <small>© 2026 LUXE MEN. ALL RIGHTS RESERVED.</small>
+
+</footer>
+
+<!-- CART -->
+
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-heading">
+        <h2>Shopping Bag</h2>
+        <button onclick="toggleCart()">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-bottom">
+
+        <h3>
+            Total: Rs. <span id="cartTotal">0</span>
+        </h3>
+
+        <button onclick="checkout()">CHECKOUT</button>
+
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const products = [
+
+{
+id:1,
+name:"Premium Black Suit",
+category:"Suits",
+price:35000,
+image:"https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:2,
+name:"Classic White Shirt",
+category:"Shirts",
+price:8500,
+image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:3,
+name:"Premium Black T-Shirt",
+category:"T-Shirts",
+price:5500,
+image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:4,
+name:"Luxury Leather Jacket",
+category:"Jackets",
+price:22000,
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:5,
+name:"Tailored Trousers",
+category:"Trousers",
+price:12000,
+image:"https://images.unsplash.com/photo-1506629905607-d9b297d8f6f5?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:6,
+name:"Luxury Watch",
+category:"Accessories",
+price:18000,
+image:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:7,
+name:"Modern Grey Blazer",
+category:"Suits",
+price:26000,
+image:"https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:8,
+name:"Casual Premium Shirt",
+category:"Shirts",
+price:7500,
+image:"https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=85"
+},
+
+{
+id:9,
+name:"Classic Denim Jacket",
+category:"Jackets",
+price:14500,
+image:"https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=85"
+}
+
+];
+
+let cart = [];
+let currentProducts = [...products];
+
+function displayProducts(list){
+
+const container = document.getElementById("productContainer");
+
+container.innerHTML = "";
+
+list.forEach(product=>{
+
+container.innerHTML += `
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="${product.image}" alt="${product.name}">
+    </div>
+
+    <div class="product-info">
+
+        <p>${product.category}</p>
+
+        <h3>${product.name}</h3>
+
+        <strong>
+            Rs. ${product.price.toLocaleString("en-PK")}
+        </strong>
+
+        <br>
+
+        <button onclick="addToCart(${product.id})">
+            ADD TO BAG +
+        </button>
+
+    </div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function filterProducts(category){
+
+currentProducts = category==="All"
+? [...products]
+: products.filter(p=>p.category===category);
+
+document.querySelectorAll(".categories button").forEach(btn=>{
+btn.classList.toggle("active",btn.textContent.trim()===category.toUpperCase());
+});
+
+sortProducts();
+
+}
+
+function searchProducts(){
+
+const value=document.getElementById("searchInput").value.toLowerCase();
+
+const filtered=currentProducts.filter(p=>
+p.name.toLowerCase().includes(value) ||
+p.category.toLowerCase().includes(value)
+);
+
+displayProducts(filtered);
+
+}
+
+function sortProducts(){
+
+const sort=document.getElementById("sortSelect").value;
+
+let sorted=[...currentProducts];
+
+if(sort==="low"){
+sorted.sort((a,b)=>a.price-b.price);
+}
+
+if(sort==="high"){
+sorted.sort((a,b)=>b.price-a.price);
+}
+
+const search=document.getElementById("searchInput").value.toLowerCase();
+
+if(search){
+sorted=sorted.filter(p=>
+p.name.toLowerCase().includes(search) ||
+p.category.toLowerCase().includes(search)
+);
+}
+
+displayProducts(sorted);
+
+}
+
+function addToCart(id){
+
+const product=products.find(p=>p.id===id);
+
+const existing=cart.find(p=>p.id===id);
+
+if(existing){
+existing.quantity++;
+}else{
+cart.push({...product,quantity:1});
+}
+
+updateCart();
+
+alert("Product added to your bag!");
+
+}
+
+function updateCart(){
+
+const container=document.getElementById("cartItems");
+
+container.innerHTML="";
+
+let total=0;
+let count=0;
+
+cart.forEach(product=>{
+
+total+=product.price*product.quantity;
+count+=product.quantity;
+
+container.innerHTML+=`
+
+<div class="cart-product">
+
+<img src="${product.image}" alt="">
+
+<div>
+
+<h3>${product.name}</h3>
+
+<p>Rs. ${product.price.toLocaleString("en-PK")}</p>
+
+<button onclick="changeQuantity(${product.id},-1)">−</button>
+
+${product.quantity}
+
+<button onclick="changeQuantity(${product.id},1)">+</button>
+
+<button onclick="removeProduct(${product.id})">
+Remove
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("cartCount").innerText=count;
+
+document.getElementById("cartTotal").innerText=total.toLocaleString("en-PK");
+
+}
+
+function changeQuantity(id,amount){
+
+const product=cart.find(p=>p.id===id);
+
+if(!product)return;
+
+product.quantity+=amount;
+
+if(product.quantity<=0){
+removeProduct(id);
+}else{
+updateCart();
+}
+
+}
+
+function removeProduct(id){
+
+cart=cart.filter(p=>p.id!==id);
+
+updateCart();
+
+}
+
+function toggleCart(){
+
+document.getElementById("cartPanel").classList.toggle("active");
+
+}
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("open");
+
+}
+
+function subscribe(event){
+
+event.preventDefault();
+
+alert("Thank you for subscribing!");
+
+event.target.reset();
+
+}
+
+function checkout(){
+
+if(cart.length===0){
+alert("Your cart is empty!");
+return;
+}
+
+alert("Demo checkout! Connect a backend for real orders.");
+
+}
+
+displayProducts(products);
+
+</script>
+
+</body>
+</html>
