@@ -4,7 +4,7 @@
 .menu-btn:active{transform:scale(.95)}
 
 /* ============ 1. RESET & VARIABLES ============ */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;scroll-behavior:smooth}
+*{padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;scroll-behavior:smooth}
 :root{--main:#ff7a18;--dark:#0f172a;--light:#f8fafc;--card:#ffffff}
 body{background:var(--light);color:var(--dark);overflow-x:hidden}
 img{max-width:100%;height:auto}
@@ -22,7 +22,7 @@ body.dark input,body.dark textarea{background:white;color:#fff;border-color:#334
 .cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,24,.18),transparent 70%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
 
 /* ============ 4. NAVBAR ============ */
-.navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);color:#fff;box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.navbar{margin: 5px; position:sticky;top:0;z-index:50;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);color:#fff;box-shadow:0 5px 20px rgba(0,0,0,.2)}
 .nav-link{color:#cbd5e1;text-decoration:none}
 .nav-link:hover{color:var(--main)}
 
